@@ -1,0 +1,417 @@
+$bright-red:hsl(12, 88%, 59%);
+$dark-blue:hsl(228, 39%, 23%);
+$dark-greyish-blue:hsl(227, 12%, 61%);
+$very-dark-blue:hsl(233, 12%, 13%);
+$very-pale-red:hsl(13, 100%, 96%);
+$very-light-gray:hsl(0, 0%, 98%);
+
+$ff-primary:"Be Vietnam Pro",
+sans-serif;
+
+$fs-body:1rem;
+$fs-heading:2rem;
+
+$fw-regular:400;
+$fw-semi-bold:500;
+$fw-bold:700;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: $ff-primary;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.show-links {
+    transition: display 0.3s ease-in;
+    display: block !important;
+}
+
+.backdrop {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    z-index: 3;
+}
+
+.button {
+    background-color: $bright-red;
+    color: white;
+    border: none;
+    padding: 1.25em 2.5em;
+    border-radius: 100vmax;
+    box-shadow: 0px 1.125rem 1rem -1rem $bright-red;
+    font-weight: $fw-bold;
+    overflow: hidden;
+}
+
+.even-columns {
+    display: grid;
+    gap: 2rem;
+}
+
+.fc-primary {
+    color: $dark-greyish-blue;
+}
+
+.fc-heading {
+    color: $dark-blue;
+}
+
+.border {
+    border: 2px solid blueviolet;
+}
+
+.header {
+    padding-block: 2rem;
+
+    &__container {
+        width: min(1110px, 100% - 3rem);
+        margin-inline: auto;
+    }
+
+    // the container that is semantically accurate for this section of page
+    &__navigation {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .button {
+            display: none;
+        }
+
+        //drop down buttons
+        .buttons {
+            button {
+                position: relative;
+                background: transparent;
+                border: 0;
+                transition: transform 0.4s ease-in-out;
+                z-index: 1000;
+            }
+
+            button:hover {
+                transform: rotate(90deg);
+            }
+        }
+
+        // the links drop down menu
+        .links {
+            display: none;
+            width: min(1110px, 100% - 3rem);
+            background-color: white;
+            z-index: 2000;
+            position: fixed;
+            top: 8rem;
+            left: 0;
+            right: 0;
+            margin: auto;
+            padding-block: 3rem;
+            border-radius: 5px;
+            box-shadow:
+                0 4px 8px 0 rgba(0, 0, 0, 0.2),
+                0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        }
+
+        .links li {
+            list-style-type: none;
+            text-align: center;
+            padding-block: 0.5rem;
+        }
+
+        .links li a {
+            text-decoration: none;
+            font-weight: $fw-semi-bold;
+            color: $dark-blue;
+            font-family: $ff-primary;
+        }
+    }
+}
+
+.hero-section {
+    padding-block: 2rem;
+    margin-bottom: 4rem;
+
+    &__container {
+        width: min(1110px, 100% - 3rem);
+        margin-inline: auto;
+        z-index: -1;
+
+        .even-columns {
+
+            &__text {
+                text-align: center;
+
+                h1 {
+                    font-size: 1.8rem;
+                    font-family: $ff-primary;
+                    margin-bottom: 1rem;
+                    line-height: 1.2;
+                }
+
+                p {
+                    margin-bottom: 2rem;
+                }
+            }
+        }
+
+    }
+}
+
+.difference {
+    padding-block: 2rem;
+    margin-bottom: 4rem;
+
+    &__container {
+        width: min(1110px, 100% - 3rem);
+        margin-inline: auto;
+    }
+
+    .even-columns {
+        &__text {
+            text-align: center;
+
+            h2 {
+                font-size: 1.5rem;
+                margin-bottom: 1rem;
+                line-height: 1.5;
+            }
+        }
+
+        .point {
+            padding-block: 2rem;
+
+            .number-heading {
+                display: flex;
+                align-items: center;
+                background: $very-pale-red;
+                gap: 10px;
+                border-radius: 100vmax;
+                margin-bottom: 1rem;
+                .number {
+                    background-color: $bright-red;
+                    padding: 0.5rem;
+                    width: 20%;
+                    text-align: center;
+                    border-radius: 100vmax;
+                    color: white;
+                }
+
+                h4 {
+                    font-size: 0.9rem;
+                }
+            }
+
+        }
+
+    }
+}
+
+.carousel {
+    padding-block: 2rem;
+    margin-bottom: 4rem;
+
+    &__container {
+        width: min(1110px, 100% - 3rem);
+        margin-inline: auto;
+        text-align: center;
+        h2 {
+            text-align: center;
+            margin-bottom: 8rem;
+        }
+
+    }
+
+    &__component {
+        background: $very-light-gray;
+       
+        margin-bottom: 2rem;
+        position: relative;
+        .person {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            text-align: center;
+
+            &__image {
+                position: absolute;
+                border: 2px solid purple;
+                width: 5rem;
+                height: 5rem;
+                top: -2.5rem;
+                border-radius: 50%;
+
+                img {
+                    object-fit: cover;
+                }
+
+            }
+            &__name{
+               margin:2rem 0;
+               font-size: 0.9rem;
+            }
+        }
+    }
+}
+.ending{
+   
+    &__container{
+        padding-block: 3rem;
+        padding-inline: 3rem;
+        width: min(1110px, 100%);
+        margin-inline: auto;
+        background-color: $bright-red;
+        color: $very-light-gray ;
+
+        .even-columns{
+            text-align: center;
+            .text{
+                font-size: 2rem;
+                font-weight: 700;
+            }
+            button[data-type="inverse"]{
+                background: white;
+                color:$bright-red;
+            }
+        }
+    }
+}
+.footer{
+    &__container{
+        width: min(1110px, 100%);
+        margin-inline: auto;
+        text-align: center;
+        padding-block: 2rem;
+        padding-inline: 2rem;
+        background-color: $very-dark-blue;
+
+        .even-columns{
+            form{
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+                input{
+                    padding: 0.5rem 1rem ;
+                    border-radius: 20px;
+                    border: none;
+                    width: 90%;
+                }
+                input::placeholder{
+                    font-size: 0.8rem;
+                }
+                button{
+                    background-color: $bright-red;
+                    padding: 0.5rem;
+                    width: 30%;
+                    text-align: center;
+                    border-radius: 120px;
+                    color: white;
+                    border: none;
+                }
+            }
+            .even-columns{
+                grid-template-columns: 1fr 1fr;
+                color: white;
+            }
+            .footer-nav{
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                ul li{
+                    list-style: none;
+                    text-align: left;
+                    margin-bottom: 1rem;
+                }
+                li a{
+                    text-decoration: none;
+                }
+            }
+            .links-logo{
+                .links{
+                    margin-bottom: 2rem;
+                    ul{
+                        display: flex;
+                        justify-content: space-between;
+                        color: white;
+                    }
+                    ul li{
+                        list-style: none;
+                    }
+                }
+                .logo{
+                    img{
+                        margin-inline: auto;
+                        color: white;
+                    }
+                }
+            }
+            p{
+                color: white;
+            }
+        }
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
