@@ -78,12 +78,14 @@ body {
   border: 0;
   transition: transform 0.4s ease-in-out;
   z-index: 1000;
+  cursor: pointer;
 }
 .header__navigation .buttons button:hover {
   transform: rotate(90deg);
 }
 .header__navigation .links {
   display: none;
+  cursor: pointer;
   width: min(1110px, 100% - 3rem);
   background-color: white;
   z-index: 2000;
@@ -108,6 +110,28 @@ body {
   font-family: "Be Vietnam Pro", sans-serif;
 }
 
+@media (min-width: 800px) {
+  .header__navigation .button {
+    display: inline-block;
+  }
+  .header__navigation .buttons button {
+    display: none;
+  }
+  .header__navigation .links {
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    background-color: transparent;
+    z-index: 0;
+    position: static;
+    padding-block: 0;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 0.8rem;
+    flex: 0 1 25rem;
+    cursor: pointer;
+  }
+}
 .hero-section {
   padding-block: 2rem;
   margin-bottom: 4rem;
@@ -116,6 +140,13 @@ body {
   width: min(1110px, 100% - 3rem);
   margin-inline: auto;
   z-index: -1;
+}
+.hero-section__container .even-columns__image {
+  position: relative;
+  text-align: center;
+  background-color: red;
+  display: flex;
+  justify-content: center;
 }
 .hero-section__container .even-columns__text {
   text-align: center;
@@ -130,6 +161,28 @@ body {
   margin-bottom: 2rem;
 }
 
+@media (min-width: 800px) {
+  .hero-section__container .even-columns {
+    grid-template-columns: 1fr 1fr;
+  }
+  .hero-section__container .even-columns__image {
+    grid-column: 2/3;
+  }
+  .hero-section__container .even-columns__text {
+    padding-block: 2rem;
+    grid-column: 1/2;
+    text-align: left;
+    grid-row: 1/2;
+  }
+  .hero-section__container .even-columns__text h1 {
+    font-size: 2.7rem !important;
+    text-align: left;
+  }
+  .hero-section__container .even-columns__text p {
+    text-align: left;
+    font-size: 1.1rem;
+  }
+}
 .difference {
   padding-block: 2rem;
   margin-bottom: 4rem;
@@ -169,6 +222,17 @@ body {
   font-size: 0.9rem;
 }
 
+@media (min-width: 800px) {
+  .difference .even-columns__text {
+    grid-column: 1/2;
+  }
+  .difference .even-columns__points {
+    grid-column: 2/3;
+  }
+  .difference .even-columns .point .number-heading h4 {
+    text-align: auto;
+  }
+}
 .carousel {
   padding-block: 2rem;
   margin-bottom: 4rem;
@@ -215,7 +279,6 @@ body {
 .ending__container {
   padding-block: 3rem;
   padding-inline: 3rem;
-  width: min(1110px, 100%);
   margin-inline: auto;
   background-color: hsl(12, 88%, 59%);
   color: hsl(0, 0%, 98%);
@@ -233,7 +296,6 @@ body {
 }
 
 .footer__container {
-  width: min(1110px, 100%);
   margin-inline: auto;
   text-align: center;
   padding-block: 2rem;

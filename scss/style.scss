@@ -100,6 +100,7 @@ body {
                 border: 0;
                 transition: transform 0.4s ease-in-out;
                 z-index: 1000;
+                cursor: pointer;
             }
 
             button:hover {
@@ -110,6 +111,7 @@ body {
         // the links drop down menu
         .links {
             display: none;
+            cursor: pointer;
             width: min(1110px, 100% - 3rem);
             background-color: white;
             z-index: 2000;
@@ -140,6 +142,42 @@ body {
     }
 }
 
+@media (min-width:800px) {
+    .header {
+        &__navigation {
+
+            .button {
+                display: inline-block;
+            }
+
+            //drop down buttons 
+            .buttons {
+                button {
+                    display: none;
+
+                }
+            }
+
+            // the links drop down menu
+            .links {
+                display: flex;
+                justify-content: space-between;
+                width: auto;
+                background-color: transparent;
+                z-index: 0;
+                position: static;
+                padding-block: 0;
+                border-radius: 0;
+                box-shadow: none;
+                font-size: 0.8rem;
+                flex: 0 1 25rem;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+
 .hero-section {
     padding-block: 2rem;
     margin-bottom: 4rem;
@@ -150,7 +188,20 @@ body {
         z-index: -1;
 
         .even-columns {
-
+            &__image{
+                position: relative;
+                text-align: center;
+                background-color: red;
+                display: flex;
+                justify-content: center;
+            }
+            // &__image::before{
+            //     content: url('../images/bg-tablet-pattern.svg');
+            //     position: absolute;
+            //     z-index: -1000;
+            //     top: -30rem;
+            //     right: -25rem;
+            // }
             &__text {
                 text-align: center;
 
@@ -167,6 +218,40 @@ body {
             }
         }
 
+    }
+}
+
+@media (min-width:800px) {
+
+    .hero-section {
+        &__container {
+
+            .even-columns {
+                grid-template-columns: 1fr 1fr;
+
+                &__image {
+                    grid-column: 2/3;
+                }
+
+                &__text {
+                    padding-block: 2rem;
+                    grid-column: 1/2;
+                    text-align: left;
+                    grid-row:1/2;
+                    h1 {
+                        font-size: 2.7rem !important;
+                        text-align: left;
+                    }
+
+                    p {
+                        text-align: left;
+                        font-size: 1.1rem;
+                    }
+                    
+                }
+            }
+
+        }
     }
 }
 
@@ -200,6 +285,7 @@ body {
                 gap: 10px;
                 border-radius: 100vmax;
                 margin-bottom: 1rem;
+
                 .number {
                     background-color: $bright-red;
                     padding: 0.5rem;
@@ -218,6 +304,42 @@ body {
 
     }
 }
+@media (min-width:800px){
+    .difference {
+        &__container {
+        }
+    
+        .even-columns {
+            &__text {
+               grid-column:1/2;
+                h2 {
+                
+                }
+            }
+            &__points{
+                grid-column: 2/3;
+            }
+    
+            .point {
+               
+    
+                .number-heading {
+            
+    
+                    .number {
+                       
+                    }
+    
+                    h4 {
+                     text-align: auto;
+                    }
+                }
+    
+            }
+    
+        }
+    }
+}
 
 .carousel {
     padding-block: 2rem;
@@ -227,6 +349,7 @@ body {
         width: min(1110px, 100% - 3rem);
         margin-inline: auto;
         text-align: center;
+
         h2 {
             text-align: center;
             margin-bottom: 8rem;
@@ -236,9 +359,10 @@ body {
 
     &__component {
         background: $very-light-gray;
-       
+
         margin-bottom: 2rem;
         position: relative;
+
         .person {
             padding: 2rem;
             display: flex;
@@ -260,60 +384,66 @@ body {
                 }
 
             }
-            &__name{
-               margin:2rem 0;
-               font-size: 0.9rem;
+
+            &__name {
+                margin: 2rem 0;
+                font-size: 0.9rem;
             }
         }
     }
 }
-.ending{
-   
-    &__container{
+
+.ending {
+
+    &__container {
         padding-block: 3rem;
         padding-inline: 3rem;
-        width: min(1110px, 100%);
         margin-inline: auto;
         background-color: $bright-red;
-        color: $very-light-gray ;
+        color: $very-light-gray;
 
-        .even-columns{
+        .even-columns {
             text-align: center;
-            .text{
+
+            .text {
                 font-size: 2rem;
                 font-weight: 700;
             }
-            button[data-type="inverse"]{
+
+            button[data-type="inverse"] {
                 background: white;
-                color:$bright-red;
+                color: $bright-red;
             }
         }
     }
 }
-.footer{
-    &__container{
-        width: min(1110px, 100%);
+
+.footer {
+    &__container {
         margin-inline: auto;
         text-align: center;
         padding-block: 2rem;
         padding-inline: 2rem;
         background-color: $very-dark-blue;
 
-        .even-columns{
-            form{
+        .even-columns {
+            form {
                 display: flex;
                 justify-content: space-between;
                 gap: 1rem;
-                input{
-                    padding: 0.5rem 1rem ;
+
+                input {
+                    padding: 0.5rem 1rem;
                     border-radius: 20px;
                     border: none;
                     width: 90%;
                 }
-                input::placeholder{
+
+                input::placeholder {
                     font-size: 0.8rem;
                 }
-                button{
+
+                button {
                     background-color: $bright-red;
                     padding: 0.5rem;
                     width: 30%;
@@ -323,43 +453,52 @@ body {
                     border: none;
                 }
             }
-            .even-columns{
+
+            .even-columns {
                 grid-template-columns: 1fr 1fr;
                 color: white;
             }
-            .footer-nav{
+
+            .footer-nav {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                ul li{
+
+                ul li {
                     list-style: none;
                     text-align: left;
                     margin-bottom: 1rem;
                 }
-                li a{
+
+                li a {
                     text-decoration: none;
                 }
             }
-            .links-logo{
-                .links{
+
+            .links-logo {
+                .links {
                     margin-bottom: 2rem;
-                    ul{
+
+                    ul {
                         display: flex;
                         justify-content: space-between;
                         color: white;
                     }
-                    ul li{
+
+                    ul li {
                         list-style: none;
                     }
                 }
-                .logo{
-                    img{
+
+                .logo {
+                    img {
                         margin-inline: auto;
                         color: white;
                     }
                 }
             }
-            p{
+
+            p {
                 color: white;
             }
         }
