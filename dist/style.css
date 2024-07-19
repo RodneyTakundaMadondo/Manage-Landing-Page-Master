@@ -186,6 +186,7 @@ body {
 .difference {
   padding-block: 2rem;
   margin-bottom: 4rem;
+  overflow: hidden;
 }
 .difference__container {
   width: min(1110px, 100% - 3rem);
@@ -193,6 +194,7 @@ body {
 }
 .difference .even-columns__text {
   text-align: center;
+  padding-block: 2rem;
 }
 .difference .even-columns__text h2 {
   font-size: 1.5rem;
@@ -200,17 +202,23 @@ body {
   line-height: 1.5;
 }
 .difference .even-columns .point {
-  padding-block: 2rem;
+  display: grid;
+  grid-template-rows: 2.5rem 1fr;
+  gap: 10px;
 }
-.difference .even-columns .point .number-heading {
+.difference .even-columns .point .overflowingpink {
+  border: 2px solid red;
+  background: hsl(13, 100%, 96%);
+  width: 200%;
+}
+.difference .even-columns .point .overflowingpink .number-heading {
+  width: min(1110px, 100% - 3rem);
   display: flex;
   align-items: center;
-  background: hsl(13, 100%, 96%);
   gap: 10px;
   border-radius: 100vmax;
-  margin-bottom: 1rem;
 }
-.difference .even-columns .point .number-heading .number {
+.difference .even-columns .point .overflowingpink .number-heading .number {
   background-color: hsl(12, 88%, 59%);
   padding: 0.5rem;
   width: 20%;
@@ -218,16 +226,22 @@ body {
   border-radius: 100vmax;
   color: white;
 }
-.difference .even-columns .point .number-heading h4 {
+.difference .even-columns .point .overflowingpink .number-heading h4 {
   font-size: 0.9rem;
 }
 
 @media (min-width: 800px) {
   .difference .even-columns__text {
     grid-column: 1/2;
+    padding-block: 2rem;
+    text-align: left;
   }
   .difference .even-columns__points {
     grid-column: 2/3;
+  }
+  .difference .even-columns .point .number-heading {
+    background: transparent;
+    gap: 2rem;
   }
   .difference .even-columns .point .number-heading h4 {
     text-align: auto;
