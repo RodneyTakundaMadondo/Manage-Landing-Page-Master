@@ -35,7 +35,9 @@ body {
     transition: display 0.3s ease-in;
     display: block !important;
 }
-
+.border{
+    border: 2px solid cyan;
+}
 .backdrop {
     position: fixed;
     height: 100%;
@@ -71,7 +73,7 @@ body {
 }
 
 .border {
-    border: 2px solid blueviolet;
+    // border: 2px solid blueviolet;
 }
 
 .header {
@@ -334,7 +336,6 @@ body {
         width: min(1110px, 100% - 3rem);
         margin-inline: auto;
         text-align: center;
-
         h2 {
             text-align: center;
             margin-bottom: 8rem;
@@ -358,7 +359,7 @@ body {
 
             &__image {
                 position: absolute;
-                border: 2px solid purple;
+                
                 width: 5rem;
                 height: 5rem;
                 top: -2.5rem;
