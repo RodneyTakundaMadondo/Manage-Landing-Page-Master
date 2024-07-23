@@ -5,8 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="./Reset CSS/reset.css">
   <link rel="stylesheet" href="./dist/style.css">
+  <link rel="stylesheet" href="./Reset CSS/reset.css">
   <script src="https://kit.fontawesome.com/6e32b16951.js" crossorigin="anonymous"></script>
   <title>Frontend Mentor | Manage landing page</title>
   <style>
@@ -36,7 +36,7 @@
         </div>
 
 
-        <ul class="links">
+        <ul class="links" role="list">
           <li><a href="#">Pricing</a></li>
           <li><a href="#">Product</a></li>
           <li><a href="#">About Us</a></li>
@@ -231,36 +231,30 @@
             <button type="button">Go</button>
           </form>
         </div>
-        <div class="even-columns border">
 
           <nav class="footer-nav">
-            <ul>
+            <ul role="list">
               <li><a href="#">Home</a></li>
               <li><a href="#">Pricing</a></li>
               <li><a href="#">Products</a></li>
               <li><a href="#">About Us</a></li>
             </ul>
-          </nav>
-
-          <nav class="footer-nav">
-            <ul>
+            <ul role="list">
               <li><a href="#">Careers</a></li>
               <li><a href="#">Community</a></li>
               <li><a href="#">Privacy Policy</a></li>
             </ul>
           </nav>
-        </div>
-        <div class="links-logo">
-          <nav class="links border">
-            <ul>
+        
+        <div class="links-logo ">
+          <nav class="links ">
+            <ul role="list">
               <li><a href="#"><i class="fa-brands fa-square-facebook fa-2x"></i></a></li>
               <li><a href="#"><i class="fa-brands fa-square-youtube fa-2x"></i></a></li>
               <li><a href="#"><i class="fa-brands fa-twitter fa-2x"></i></a></li>
               <li><a href="#"><i class="fa-brands fa-pinterest fa-2x"></i></a></li>
               <li><a href="#"><i class="fa-brands fa-instagram fa-2x"></i></a></li>
             </ul>
-          </nav>
-          <div class="logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="146" height="24">
               <g fill="none" fill-rule="evenodd">
                 <path fill="#ffff" fill-rule="nonzero"
@@ -272,9 +266,11 @@
                 </g>
               </g>
             </svg>
-          </div>
+             <p class="copyright">Copyright 2020. All Rights Reserved</p>
+          </nav>
+         
         </div>
-        <!-- <p class="copyright">Copyright 2020. All Rights Reserved</p> -->
+       
       </div>
     </div>
   </footer>
