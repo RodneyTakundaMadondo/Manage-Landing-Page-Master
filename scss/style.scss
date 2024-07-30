@@ -331,13 +331,14 @@ body {
             position: absolute;
             content: '';
             background: url('../images/bg-tablet-pattern.svg') no-repeat;
-            background-position: cover;
+            background-position: top left;
             z-index: -1;
             background-size: 380px;
             width: 127px;
             height: 471px;
-            bottom: 22rem;
+            bottom: -22rem;
             right: 0;
+            border: 1px solid red;
         }
 
         &__text {
@@ -403,7 +404,7 @@ body {
                 width: 600px;
                 height: 600px;
                 left: -300px;
-                bottom:-20rem;
+                bottom:-70rem;
             }
             .point {
                 p {
