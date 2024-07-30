@@ -189,11 +189,18 @@ body {
 }
 @media (min-width: 768px) {
   .hero-section__container .even-columns__image::before {
-    background-size: 600px;
+    background-size: 710px;
     background-position: bottom left;
-    width: 400px !important;
-    height: 500px;
-    border: 1px solid red;
+    width: 430px;
+    height: 530px;
+  }
+}
+@media (min-width: 1200px) {
+  .hero-section__container .even-columns__image::before {
+    background-size: 690px;
+    background-position: bottom left;
+    width: 650px;
+    height: 600px;
   }
 }
 @media (min-width: 768px) {
@@ -236,7 +243,6 @@ body {
   height: 471px;
   bottom: -22rem;
   right: 0;
-  border: 1px solid red;
 }
 .difference .even-columns__text {
   text-align: center;
