@@ -32,7 +32,20 @@ body {
 .hidden {
     display: none !important;
 }
-
+.errorForm::placeholder{
+    color: $bright-red;
+}
+.errorForm{
+    outline: 1px solid $bright-red;
+}
+.error-msg{
+    color: red;
+    font-style: italic;
+    margin-left: 2rem
+}
+.show-errormsg{
+    display: inline;
+}
 .show-links {
     transition: display 0.3s ease-in;
     display: block !important;

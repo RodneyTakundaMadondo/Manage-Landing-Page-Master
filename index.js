@@ -46,3 +46,29 @@ const swiper = new Swiper('.swiper', {
   
   
   });
+
+  let email = document.getElementById("email-input");
+  let formBtn = document.getElementById("form-button");
+  let errorMsg = document.querySelector(".error-msg");
+
+
+  
+  function ValidateEmail() {
+
+    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+  
+    if (email.value.match(validRegex)) {
+      console.log("all good");
+      return true;
+  
+    } else {
+  
+      email.classList.add("errorForm");
+      errorMsg.classList.remove("hidden")
+  
+      return false;
+  
+    }
+  
+  }
+  formBtn.addEventListener("click", ValidateEmail)
