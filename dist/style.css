@@ -408,7 +408,6 @@ body {
   z-index: -1000;
   inset: 0;
   opacity: 0.1;
-  border: 5px solid cyan;
 }
 .ending__container .even-columns button[data-type=inverse] {
   background: white;
