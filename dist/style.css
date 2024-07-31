@@ -263,11 +263,11 @@ body {
   background-size: 380px;
   width: 127px;
   height: 471px;
-  bottom: -22rem;
-  right: 0;
-  border: none;
+  bottom: 7rem;
+  right: -24px;
 }
 .difference .even-columns__text {
+  position: relative;
   text-align: center;
   padding-block: 2rem;
 }
@@ -315,12 +315,12 @@ body {
   }
   .difference .even-columns__text::before {
     z-index: -1;
-    background-size: 100%;
-    background-position: bottom right;
+    background-size: 600px;
+    background-position: top right;
     width: 600px;
     height: 600px;
-    left: -300px;
-    bottom: -70rem;
+    bottom: -22rem;
+    left: -68%;
   }
   .difference .even-columns .point p {
     grid-column: 2/3;
@@ -342,12 +342,14 @@ body {
 }
 .carousel .swiper {
   overflow: visible;
+  position: relative !important;
 }
 .carousel .swiper .swiper-pagination > * {
   background-color: hsl(12, 88%, 59%);
 }
 .carousel .swiper .swiper-pagination {
-  top: 17rem !important;
+  position: relative !important;
+  margin-top: 2rem;
 }
 .carousel__component {
   margin-bottom: 2rem;
@@ -377,19 +379,36 @@ body {
   font-size: 0.9rem;
 }
 
+@media (min-width: 678px) {
+  .carousel .swiper .swiper-pagination {
+    display: none;
+  }
+}
 .ending__container {
   padding-block: 5rem;
   padding-inline: 3rem;
   margin-inline: auto;
   background-color: hsl(12, 88%, 59%);
   color: hsl(0, 0%, 98%);
+  position: relative;
 }
 .ending__container .even-columns {
   text-align: center;
+  isolation: isolate;
 }
 .ending__container .even-columns .text {
   font-size: 2rem;
   font-weight: 700;
+}
+.ending__container .even-columns .text::before {
+  content: "";
+  position: absolute;
+  background: url("../images/bg-tablet-pattern.svg") no-repeat, url("../images/bg-tablet-pattern.svg") no-repeat;
+  background-position: -15rem -5rem, 50rem -40rem;
+  z-index: -1000;
+  inset: 0;
+  opacity: 0.1;
+  border: 5px solid cyan;
 }
 .ending__container .even-columns button[data-type=inverse] {
   background: white;

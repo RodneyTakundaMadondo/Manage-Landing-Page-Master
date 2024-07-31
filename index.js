@@ -58,7 +58,8 @@ const swiper = new Swiper('.swiper', {
     var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
   
     if (email.value.match(validRegex)) {
-      console.log("all good");
+      email.classList.remove("errorForm");
+      errorMsg.classList.add("hidden")
       return true;
   
     } else {
@@ -71,4 +72,8 @@ const swiper = new Swiper('.swiper', {
     }
   
   }
-  formBtn.addEventListener("click", ValidateEmail)
+  email.addEventListener("input", ValidateEmail)
+  formBtn.addEventListener("click", ()=>{
+    ValidateEmail
+    email.value ="";
+  })

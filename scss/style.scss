@@ -348,12 +348,12 @@ body {
             background-size: 380px;
             width: 127px;
             height: 471px;
-            bottom: -22rem;
-            right: 0;
-            border: none;
+            bottom: 7rem;
+            right: -24px;
         }
 
         &__text {
+            position: relative;
             text-align: center;
             padding-block: 2rem;
 
@@ -412,12 +412,12 @@ body {
 
             &__text::before {
                 z-index: -1;
-                background-size: 100%;
-                background-position: bottom right;
+                background-size: 600px;
+                background-position: top right;
                 width: 600px;
                 height: 600px;
-                left: -300px;
-                bottom: -70rem;
+                bottom: -22rem;
+                left: -68%;
             }
 
             .point {
@@ -444,20 +444,20 @@ body {
             text-align: center;
             margin-bottom: 8rem;
         }
-
     }
 
     .swiper {
         overflow: visible;
-
+        position: relative !important;
         .swiper-pagination>* {
             background-color: $bright-red;
         }
 
         .swiper-pagination {
-            top: 17rem !important;
+            position: relative !important;
+            margin-top:2rem;
         }
-
+ 
 
     }
 
@@ -492,6 +492,15 @@ body {
         }
     }
 }
+@media(min-width:678px){
+    .carousel{
+        .swiper{
+            .swiper-pagination{
+                display: none;
+            }
+        }
+    }
+}
 
 .ending {
 
@@ -501,13 +510,29 @@ body {
         margin-inline: auto;
         background-color: $bright-red;
         color: $very-light-gray;
-
+        position: relative;
         .even-columns {
             text-align: center;
-
-            .text {
+            isolation: isolate;
+            .text{
                 font-size: 2rem;
                 font-weight: 700;
+            }
+            .text::before{
+                content: '';
+                position: absolute;
+                background: url('../images/bg-tablet-pattern.svg') no-repeat,
+                url('../images/bg-tablet-pattern.svg') no-repeat;
+                // background-size: 500px;
+                background-position: -15rem -5rem, 50rem -40rem;
+                // width: 300px;
+                // height: 300px;
+                z-index: -1000;
+                // bottom: 0;
+                inset: 0;
+                // left: 0;
+                opacity: 0.1;
+                border: 5px solid cyan;
             }
 
             button[data-type="inverse"] {
@@ -525,7 +550,6 @@ body {
 
             button[data-type="inverse"]:hover {
                 color: hsla(12, 88%, 59%, 0.4);
-
             }
         }
     }
