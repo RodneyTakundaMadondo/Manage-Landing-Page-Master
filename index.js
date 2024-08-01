@@ -50,30 +50,34 @@ const swiper = new Swiper('.swiper', {
   let email = document.getElementById("email-input");
   let formBtn = document.getElementById("form-button");
   let errorMsg = document.querySelector(".error-msg");
-
+  let mybool = true;
 
   
   function ValidateEmail() {
 
-    var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-  
+    let validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+ 
     if (email.value.match(validRegex)) {
       email.classList.remove("errorForm");
       errorMsg.classList.add("hidden")
-      return true;
+      
+      mybool =true ;
   
     } else {
   
       email.classList.add("errorForm");
       errorMsg.classList.remove("hidden")
   
-      return false;
+     
+      mybool = false;
   
     }
   
   }
   email.addEventListener("input", ValidateEmail)
   formBtn.addEventListener("click", ()=>{
-    ValidateEmail
-    email.value ="";
+        ValidateEmail
+        if(mybool === true && email.value!== ""){
+          email.value = "";
+        }
   })
