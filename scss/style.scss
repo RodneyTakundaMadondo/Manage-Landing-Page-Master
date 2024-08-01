@@ -429,6 +429,22 @@ body {
     }
 }
 
+@media(min-width:1400px){
+    .difference {
+        .even-columns {
+            &__text::before{
+                z-index: -1;
+                background-size: 600px;
+                background-position: top right;
+                width: 600px;
+                height: 600px;
+                bottom: -22rem;
+                left: -90%;
+                border: 3px solid green !important;
+            }
+        }
+    }
+}
 
 .carousel {
     padding-block: 2rem;
@@ -565,6 +581,7 @@ body {
         }
     }
 }
+
 
 .footer {
     &__container {
